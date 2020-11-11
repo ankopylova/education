@@ -1,9 +1,5 @@
 function isOdd(a) {
-if (a % 2 === 0){
-    return true;
-}
-return false;
-
+    return a % 2 === 0;
 }
 window.isOdd = isOdd;
 export default isOdd;

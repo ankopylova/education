@@ -1,18 +1,14 @@
 function basicCalc(operation, a, b) {
       switch (operation){
-    case '+':
+        case '+':
         return  a + b;
-        break;
-    case '-':
+        case '-':
         return  a - b;
-        break;
-    case '*':
+        case '*':
         return  a * b;
-        break;
-    case '/':
+        case '/':
         return  a / b;
-        break;
-}
+        }
 }
 window.basicCalc = basicCalc;
 export default basicCalc;

@@ -1,16 +1,29 @@
 function isEqual(a, b) {
-    if (a!==null&&b!==null&&a!==undefined&&b!==undefined){
-        let str,
-            str1;
-  for (let key in a) {
-   str += key + JSON.stringify(a);
-  }
-  for (let key1 in b) {
-   str1 += key1 + JSON.stringify(b);
-  }
- return (str === str1)
+    if (typeof a !== "object" || typeof b !== "object") {
+        return false;
     }
-  else return a === b;
+    if (a === undefined || b === undefined) {
+        return false;
+    }
+    if (a === null || b === null) {
+        return false;
+    }
+    let obj1Keys = Object.keys(a);
+    let obj2Keys = Object.keys(b);
+    if (obj1Keys.length !== obj2Keys.length) {
+        return false;
+    }
+    for (let i = 0; i < obj1Keys.length; i++) {
+        if (!obj2Keys.includes(obj1Keys[i])) {
+            return false;
+        }
+        if (a[obj1Keys[i]] !== b[obj2Keys[i]]){
+            return false;
+        }
+    }
+    return true;
 }
+
+
 window.isEqual = isEqual;
 export default isEqual;

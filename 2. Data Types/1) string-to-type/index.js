@@ -9,9 +9,9 @@ function stringToType(str) {
     case "undefined":
       return undefined
     default:
-      if (/^\d+$/.test(str)) return Number.parseInt(str);
+      if (/^\d+$/.test(str)) return Number.parseInt(str)
+      return str;
   }
-  return str;
 }
 
 window.stringToType = stringToType;

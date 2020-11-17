@@ -1,12 +1,9 @@
 function findPair(arr) {
-    const newArr = arr.sort()
-    let res;
-    for (let i = 0; i < arr.length; i++) {
-        if (newArr[i] === newArr[i + 1]) res = newArr[i];
-    }
-    return res || null;
+    arr.sort();
+    return arr.find( function check(val, i, arr){
+    if (arr[i] === arr[i + 1] ) return val;
+    }) || null;
 }
 
 window.findPair = findPair;
-
 export default findPair;

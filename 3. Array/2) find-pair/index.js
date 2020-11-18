@@ -1,8 +1,5 @@
 function findPair(arr) {
-    arr.sort();
-    return arr.find((val, i, arr) => {
-        if (arr[i] === arr[i + 1] ) return val;
-    }) || null;
+    return arr.sort().find((val, i, arr) => arr[i] === arr[i + 1]) || null;
 }
 
 window.findPair = findPair;

@@ -13,9 +13,8 @@
  */
 
 function isValidEmail(email) {
-  // Напиши свой код здесь
+    const val = /\S+@\S+\.\S+/;
+    return val.test(email);
 }
-
 window.isValidEmail = isValidEmail;
-
 export default isValidEmail;

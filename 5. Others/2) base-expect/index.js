@@ -9,9 +9,15 @@
  */
 
 function baseExpect(a) {
-  // Напиши свой код здесь
+    if (typeof a !== 'number') return false;
+    function toBe(b){
+        return a === b;
+    }
+    toBe.not = function (b){
+        return a !== b;
+    }
+    return {toBe:toBe};
 }
 
 window.baseExpect = baseExpect;
-
 export default baseExpect;

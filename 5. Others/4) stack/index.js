@@ -1,6 +1,6 @@
 class Stack {
     constructor() {
-        this.items = []
+        this.items = [];
         this.size = 0;
     }
 
@@ -12,11 +12,11 @@ class Stack {
 
     pop() {
         if (this.size !== 0) {
-            this.items.pop()
+            this.items.pop();
             --this.size;
             return this;
         }
-        throw new Error("Stack is empty!")
+        throw new Error("Stack is empty!");
     }
 
     isEmpty() {
@@ -24,12 +24,10 @@ class Stack {
     }
 
     print() {
-       return "[" + this.items.join(", ") + "]"
+       return "[" + this.items.join(", ") + "]";
     }
 
 }
 
-
 window.Stack = Stack;
-
 export default Stack;

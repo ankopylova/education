@@ -1,12 +1,10 @@
 function queryToObject(query) {
     let obj = {};
     if (query !== "" && query !== "?") {
-        obj = JSON.parse('{"' + query.split("?")[1].replace
-        (/&/g, '", "').replace
-        (/=/g, '": "') + '"}');
-        for (const key in obj) {
-            obj[key] = stringToType(obj[key]);
-        }
+        query.replace('?', '').split("&").forEach((item) => {
+            const [key, value] = item.split("=");
+            obj[key] = stringToType(value)
+        })
     }
     return obj;
 }

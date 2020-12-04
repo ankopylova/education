@@ -8,8 +8,8 @@ function xhrGet(url) {
         xhr.onload = function () {
             if (xhr.status <= 299) resolve(xhr.response);
             reject(xhr.response);
-    };
-});
+        }
+    });
 }
 
 window.xhrGet = xhrGet;

@@ -5,11 +5,11 @@ function xhrGet(url) {
     xhr.send();
     xhr.responseType = "json"
     return new Promise((resolve, reject) => {
-        setTimeout(() => {
+        xhr.onload = function () {
             if (xhr.status <= 299) resolve(xhr.response);
             reject(xhr.response);
-        }, 1);
-    });
+    };
+});
 }
 
 window.xhrGet = xhrGet;
